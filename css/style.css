@@ -118,7 +118,88 @@ p {
 
 /* ===== How It Works ===== */
 
+.how-it-works {
+    padding: 90px 0;
+    background: white;
+}
 
+.how-it-works-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2.5rem 3rem;
+    align-items: center;
+}
+
+.how-it-works-steps {
+    min-width: 0;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1.5rem 1.5rem;
+}
+
+.how-it-works-visual {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.how-it-works-image-frame {
+    width: 100%;
+    max-width: 480px;
+    margin-left: auto;
+    border-radius: var(--radius);
+    background: transparent;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    overflow: hidden;
+}
+
+.how-it-works-image-frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    box-shadow:
+        0 8px 20px rgba(29, 78, 216, 0.2),
+        0 0 0 2px #fff,
+        0 0 0 4px rgba(234, 88, 12, 0.5);
+}
+
+.step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.step p {
+    color: var(--text-light);
+}
 
 
 
