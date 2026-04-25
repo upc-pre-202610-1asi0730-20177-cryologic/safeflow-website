@@ -1533,6 +1533,21 @@ button:focus-visible {
 }
 
 
+.industries {
+    padding: 90px 0;
+    background: #f0f7ff;
+}
+
+.industries-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 2.5rem 3rem;
+    align-items: center;
+}
+
+
+
+
 
 
 
