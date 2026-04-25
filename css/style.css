@@ -401,7 +401,120 @@ section {
 
 /* ===== Features Section ===== */
 
+.features {
+    position: relative;
+    padding: 90px 0;
+    background: #f8fbff;
+    overflow: hidden;
+}
 
+.features::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(52vw, 760px);
+    height: 52%;
+    background: url("../img/doctora.png") center / cover no-repeat;
+    opacity: 0.95;
+    -webkit-mask-image: linear-gradient(to left, #000 68%, transparent 100%), linear-gradient(to bottom, #000 78%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to left, #000 68%, transparent 100%), linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-composite: intersect;
+    pointer-events: none;
+}
+
+.features .container {
+    position: relative;
+    z-index: 1;
+}
+
+.features-head {
+    max-width: 640px;
+    margin-bottom: 2rem;
+}
+
+.features-eyebrow {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.features .section-title {
+    margin-bottom: 0.9rem;
+}
+
+.features-lead {
+    color: var(--text-light);
+    max-width: 46ch;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.feature-card {
+    background: var(--surface);
+    padding: 1.4rem 1.35rem 1.2rem;
+    border-radius: 14px;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(29, 78, 216, 0.08);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(29, 78, 216, 0.14);
+    border-color: rgba(29, 78, 216, 0.4);
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    margin-bottom: 0.95rem;
+    color: var(--primary-color);
+    background: #eef4ff;
+}
+
+.feature-icon svg {
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+.feature-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+    color: var(--dark-color);
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.5;
+    font-size: 0.94rem;
+}
+
+.features-footnote {
+    margin-top: 1.25rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.features-footnote span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
 
 
 
