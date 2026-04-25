@@ -322,6 +322,27 @@ const i18n = {
             industry_4: 'Logistics',
             industry_4_desc: 'Traceability in distribution',
 
+
+
+            // ===== Testimonials =====
+            testimonials_title: 'Testimonios',
+            testimonials_subtitle: 'Historias reales de equipos que confían en SafeFlow.',
+            slider_prev: 'Anterior',
+            slider_next: 'Siguiente',
+            testimonial_1_tag: 'Sector farmacéutico',
+            testimonial_1_quote: 'Con SafeFlow logramos tener control total de la cadena de frío en tiempo real. Antes detectábamos fallas demasiado tarde, pero ahora recibimos alertas inmediatas y podemos actuar rápido. Esto ha reducido considerablemente nuestras pérdidas.',
+            testimonial_1_author: '— Laura Méndez, Jefa de Calidad en laboratorio farmacéutico',
+            testimonial_2_tag: 'Operador logístico (3PL)',
+            testimonial_2_quote: 'SafeFlow nos permitió ofrecer mayor transparencia a nuestros clientes. Podemos demostrar con datos que la temperatura se mantuvo dentro del rango durante todo el transporte. Esto nos ha dado una ventaja competitiva clara.',
+            testimonial_2_author: '— Carlos Rivas, Supervisor de Operaciones Logísticas',
+            testimonial_3_tag: 'Empresa de alimentos',
+            testimonial_3_quote: 'Gracias a SafeFlow ahora tenemos visibilidad completa de nuestras rutas. Si ocurre una desviación de temperatura, el sistema nos alerta al instante. Hemos mejorado nuestro control de calidad y reducido desperdicios.',
+            testimonial_3_author: '— Ana Torres, Gerente de Producción',
+            testimonial_4_tag: 'Jefe de logística',
+            testimonial_4_quote: 'El dashboard de SafeFlow es muy intuitivo. En un solo lugar vemos el estado de todos los envíos, alertas y registros históricos. Hemos optimizado nuestro tiempo y reducido la dependencia de procesos manuales.',
+            testimonial_4_author: '— Diego Salazar, Jefe de Logística',
+
+            
             // ===== Team =====
             team_title: 'Our Team',
             team_intro: 'Professionals dedicated to optimizing the cold chain',
