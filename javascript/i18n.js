@@ -144,7 +144,7 @@ const i18n = {
 
             // ===== Team =====
             team_title: 'Nuestro Equipo',
-            team_intro: 'Profesionales dedicados a optimizar la cadena de frío',
+            team_intro: 'Somos un equipo de estudiantes de Ingeniería de Software enfocados en desarrollar soluciones tecnológicas para optimizar el monitoreo de temperatura en cadenas de frío. Nuestro objetivo es ayudar a empresas logísticas y de almacenamiento a prevenir pérdidas mediante monitoreo en tiempo real, alertas inteligentes y tecnologías IoT.',
             team_member_1_name: 'Angel Guillermo Berrospi Marín',
             team_member_1_role: 'Ingeniero de Software',
             team_member_1_bio: '',
@@ -345,7 +345,7 @@ const i18n = {
             
             // ===== Team =====
             team_title: 'Our Team',
-            team_intro: 'Professionals dedicated to optimizing the cold chain',
+            team_intro: 'We are a team of software engineering students focused on developing technological solutions to optimize temperature monitoring in cold chains. Our goal is to help logistics and warehousing companies prevent losses through real-time monitoring, smart alerts, and IoT technologies.',
             team_member_1_name: 'Angel Guillermo Berrospi Marin',
             team_member_1_role: 'Software Engineer',
             team_member_1_bio: '',
