@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Pago - SafeFlow</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: var(--body-bg, #f9fafb);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pago-page {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1.5rem;
+        }
+
+        .pago-card {
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid var(--border-color, #e5e7eb);
+            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.1);
+            padding: clamp(2rem, 5vw, 3.5rem);
+            max-width: 560px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .pago-card__brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+        }
+
+        .pago-card__brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .pago-card__brand span {
+            font-family: var(--font-heading, "Fira Sans", sans-serif);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color, #0066cc);
+            letter-spacing: -0.02em;
+        }
+
+        .pago-card__icon {
+            width: 84px;
+            height: 84px;
+            border-radius: 50%;
+            background: rgba(0, 102, 204, 0.1);
+            color: var(--primary-color, #0066cc);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .pago-card__icon svg {
+            width: 42px;
+            height: 42px;
+        }
+
+        .pago-card h1 {
+            font-family: var(--font-heading, "Fira Sans", sans-serif);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--dark-color, #1f2937);
+            margin-bottom: 0.85rem;
+            line-height: 1.2;
+        }
+
+        .pago-card p {
+            color: var(--text-light, #6b7280);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .pago-card__actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pago-card .btn {
+            min-width: 160px;
+        }
+    </style>
+</head>
+<body>
+    <main class="pago-page">
+        <div class="pago-card">
+            <a class="pago-card__brand" href="index.html" aria-label="Volver al inicio de SafeFlow">
+                <img src="img/logoP-safelow.png" alt="Logo SafeFlow">
+                <span>SafeFlow</span>
+            </a>
+
+            <div class="pago-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="6" width="20" height="13" rx="2.5"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                    <line x1="6" y1="15" x2="10" y2="15"></line>
+                </svg>
+            </div>
+
+            <h1>Aquí se va a realizar el pago</h1>
+            <p>Esta será la página segura donde podrás completar la compra de tu plan SafeFlow. La pasarela de pago se integrará próximamente.</p>
+
+            <div class="pago-card__actions">
+                <a class="btn btn-outline" href="index.html#pricing">Ver planes</a>
+                <a class="btn btn-primary" href="index.html">Volver al inicio</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
