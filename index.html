@@ -4,60 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SafeFlow - Gestión Inteligente de la Cadena de Frío">
-    <title>SafeFlow | Cadena de Frío Inteligente</title>
+    <meta name="description" content="SafeFlow es la plataforma para monitoreo y control de temperatura en logística, almacenamiento y distribución. Cumplimiento normativo y seguridad de productos refrigerados.">
+    <meta name="keywords" content="cadena de frío, monitoreo temperatura, logística refrigerada, sensores IoT, DIGEMID, SENASA, trazabilidad, almacenamiento en frío">
+    <meta name="author" content="Cryologic Systems — SafeFlow">
+    <meta name="theme-color" content="#0066CC">
+    <title>Control de Cadena de Frío en Tiempo Real - SafeFlow</title>
+    <link rel="canonical" href="https://upc-pre-202610-1asi0730-20177-cryologic.github.io/safeflow-website/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Control de Cadena de Frío en Tiempo Real - SafeFlow">
+    <meta property="og:description" content="SafeFlow es la plataforma para monitoreo y control de temperatura en logística, almacenamiento y distribución. Cumplimiento normativo y seguridad de productos refrigerados.">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Control de Cadena de Frío en Tiempo Real - SafeFlow">
+    <meta name="twitter:description" content="SafeFlow es la plataforma para monitoreo y control de temperatura en logística, almacenamiento y distribución. Cumplimiento normativo y seguridad de productos refrigerados.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SafeFlow",
+      "alternateName": "Cryologic Systems",
+      "description": "Plataforma digital para monitoreo, alertas y trazabilidad en cadena de frío.",
+      "url": "https://upc-pre-202610-1asi0730-20177-cryologic.github.io/safeflow-website/",
+      "email": "contacto@safeflow.pe",
+      "areaServed": "PE",
+      "knowsAbout": ["cold chain", "temperature monitoring", "IoT", "pharma logistics"]
+    }
+    </script>
 </head>
 <body>
 
+    <a href="#main-content" class="skip-link" id="skipLink">Saltar al contenido principal</a>
+
      <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegación principal">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">
+                <a class="logo" id="logoLink" href="#" aria-label="Ir al inicio">
                     <img class="logo-image" src="img/logoP-safelow.png" alt="Logo SafeFlow">
                     <span class="logo-text">SafeFlow</span>
-                </div>
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                </a>
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#features">Características</a></li>
+                    <li><a href="#product-demo">Plataforma</a></li>
+                    <li><a href="#features">Acerca del Producto</a></li>
+                    <li><a href="#how-it-works">¿Cómo funciona?</a></li>
                     <li><a href="#pricing">Planes</a></li>
-                    <li><a href="#benefits">Ventajas</a></li>
-                    <li><a href="#contact" class="cta-nav">Contacto</a></li>
-                    <li>
-                        <div class="language-switcher">
-                            <button class="lang-btn active" data-lang="es">ES</button>
-                            <button class="lang-btn" data-lang="en">EN</button>
-                        </div>
-                    </li>
+                    <li><a href="#team">Nosotros</a></li>
+                    <li><a href="#industries">Sectores</a></li>
+                    <li><a href="#contact">Contacto</a></li>
                 </ul>
+                <div class="nav-header-end">
+                    <div class="language-switcher" role="group" aria-label="Idioma">
+                        <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">
+                            <span class="lang-btn__flag" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <clipPath id="flag-es-clip"><circle cx="12" cy="12" r="11.5"/></clipPath>
+                                    </defs>
+                                    <g clip-path="url(#flag-es-clip)">
+                                        <rect width="24" height="24" fill="#aa151b"/>
+                                        <rect y="6" width="24" height="12" fill="#f1bf00"/>
+                                    </g>
+                                    <circle cx="12" cy="12" r="11.5" fill="none" stroke="rgba(15,23,42,0.18)"/>
+                                </svg>
+                            </span>
+                            <span class="lang-btn__label">ES</span>
+                        </button>
+                        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+                            <span class="lang-btn__flag" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <clipPath id="flag-us-clip"><circle cx="12" cy="12" r="11.5"/></clipPath>
+                                    </defs>
+                                    <g clip-path="url(#flag-us-clip)">
+                                        <rect width="24" height="24" fill="#b22234"/>
+                                        <g fill="#ffffff">
+                                            <rect y="1.846" width="24" height="1.846"/>
+                                            <rect y="5.538" width="24" height="1.846"/>
+                                            <rect y="9.231" width="24" height="1.846"/>
+                                            <rect y="12.923" width="24" height="1.846"/>
+                                            <rect y="16.615" width="24" height="1.846"/>
+                                            <rect y="20.308" width="24" height="1.846"/>
+                                        </g>
+                                        <rect width="10" height="12.923" fill="#3c3b6e"/>
+                                        <g fill="#ffffff">
+                                            <circle cx="2.2" cy="2.4" r="0.7"/>
+                                            <circle cx="5" cy="2.4" r="0.7"/>
+                                            <circle cx="7.8" cy="2.4" r="0.7"/>
+                                            <circle cx="3.6" cy="4.8" r="0.7"/>
+                                            <circle cx="6.4" cy="4.8" r="0.7"/>
+                                            <circle cx="2.2" cy="7.2" r="0.7"/>
+                                            <circle cx="5" cy="7.2" r="0.7"/>
+                                            <circle cx="7.8" cy="7.2" r="0.7"/>
+                                            <circle cx="3.6" cy="9.6" r="0.7"/>
+                                            <circle cx="6.4" cy="9.6" r="0.7"/>
+                                        </g>
+                                    </g>
+                                    <circle cx="12" cy="12" r="11.5" fill="none" stroke="rgba(15,23,42,0.18)"/>
+                                </svg>
+                            </span>
+                            <span class="lang-btn__label">EN</span>
+                        </button>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
+
+    <main id="main-content">
 
     <!-- Hero Section -->   
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Control Total de tu Cadena de Frío</h1>
-                <p class="hero-subtitle">Monitoreo en tiempo real, alertas inteligentes y gestión completa de inventario para reducir pérdidas y garantizar calidad.</p>
+                <h1 class="hero-title"><span class="hero-title__before">Control </span><span class="hero-title__accent">Total</span><span class="hero-title__after"> de tu Cadena de Frío</span></h1>
+                <p class="hero-subtitle">Monitorea productos sensibles en tiempo real, recibe alertas instantáneas y garantiza condiciones seguras durante almacenamiento y transporte.</p>
                 <div class="hero-buttons">
-                    <a class="btn btn-primary" id="demoBtn" href="app.html">IR A LA APP</a>
-                    <a class="btn btn-secondary" href="#contact">Contáctanos</a>
+                    <a class="btn btn-primary" id="demoBtn" href="app.html">Ver Demo</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="product-demo" id="product-demo">
+        <div class="container">
+            <h2 class="section-title product-demo__title">Plataforma y propuesta de valor</h2>
+            <p class="product-demo__lead">SafeFlow centraliza el monitoreo de temperatura y la trazabilidad para que dejes de reaccionar tarde ante excursiones térmicas.</p>
+            <div class="product-demo__value-grid">
+                <article class="value-card">
+                    <h3 class="value-card__label">Problema</h3>
+                    <p class="value-card__text">Las cadenas de frío pierden producto y reputación cuando la temperatura se sale de rango y no hay evidencia clara para auditorías.</p>
+                </article>
+                <article class="value-card">
+                    <h3 class="value-card__label">Para quién</h3>
+                    <p class="value-card__text">Farmacias, laboratorios, alimentos perecederos, 3PL y almacenes que deben cumplir DIGEMID, SENASA y buenas prácticas de distribución.</p>
+                </article>
+                <article class="value-card">
+                    <h3 class="value-card__label">Beneficio</h3>
+                    <p class="value-card__text">Menos merma, alertas en minutos, reportes listos para inspección y visibilidad 24/7 desde web y móvil.</p>
+                </article>
+            </div>
+            <figure class="product-demo__figure">
+                <img src="img/laptop.png" alt="Captura del dashboard SafeFlow con sensores y alertas" width="920" height="560" loading="lazy" decoding="async">
+                <figcaption class="product-demo__caption">Vista del tablero: sensores IoT, umbrales y alertas en tiempo real.</figcaption>
+            </figure>
+            <div class="product-demo__cta-row">
+                <a class="btn btn-primary" href="app.html">Abrir demo web</a>
+                <a class="btn btn-outline" href="#contact">Agendar reunión</a>
+            </div>
+        </div>
+    </section>
+
         <!-- Hero Result -->
-    <section class="results">
+    <section class="results" id="results">
         <div class="container">
             <h2 class="section-title">Resultados que Puedes Medir</h2>
             <p class="results-subtitle">Impacto real en continuidad operativa, cumplimiento y eficiencia logística.</p>
@@ -90,7 +198,8 @@
         <div class="container">
             <div class="features-head">
                 <p class="features-eyebrow">FUNCIONALIDADES</p>
-                <h2 class="section-title section-title--left">Características Principales</h2>
+                <h2 class="section-title features-section-title">Acerca del Producto</h2>
+                <h3 class="features-subtitle">Características Principales</h3>
                 <p class="features-lead">Nuestra plataforma centraliza, automatiza y protege toda tu operación en un solo lugar.</p>
             </div>
             <div class="features-grid">
@@ -159,7 +268,20 @@
                     <p>Encriptación de datos y acceso basado en roles</p>
                 </div>
             </div>
-            <p class="features-footnote">Confiabilidad, seguridad y control en cada etapa. <span>Tu operación, siempre un paso adelante.</span></p>
+            <div class="features-intro">
+                <h3 class="features-intro__title">Conoce SafeFlow en acción</h3>
+                <p class="features-intro__text">En este video verás cómo nuestra plataforma integra monitoreo en tiempo real, alertas inteligentes y trazabilidad completa para proteger cada etapa de tu cadena de frío.</p>
+                <div class="features-video">
+                    <iframe
+                        class="features-video__iframe"
+                        src="https://www.youtube.com/embed/Kb1i16M4o-Q"
+                        title="SafeFlow — presentación del producto"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                        loading="lazy"></iframe>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -167,7 +289,7 @@
 
      <!-- How It Works Section -->
 
-<section class="how-it-works">
+<section class="how-it-works" id="how-it-works">
         <div class="container">
             <h2 class="section-title">¿Cómo Funciona?</h2>
             <div class="how-it-works-layout">
@@ -204,6 +326,27 @@
         </div>
     </section>
 
+    <section class="technology" id="technology">
+        <div class="container">
+            <h2 class="section-title">Tecnología y confianza</h2>
+            <p class="technology__intro">Así funciona SafeFlow bajo el capó: sensores, nube y seguridad pensados para operaciones críticas.</p>
+            <div class="technology__grid">
+                <article class="technology-card">
+                    <h3>IoT y sensores</h3>
+                    <p>Integración con sensores de temperatura/humedad en almacenes y unidades de transporte. Telemetría periódica hacia la nube con resiliencia ante cortes breves de red.</p>
+                </article>
+                <article class="technology-card">
+                    <h3>Arquitectura</h3>
+                    <p>Frontend web responsivo, APIs para inventario y alertas, y almacenamiento de series temporales optimizado para consultas de auditoría.</p>
+                </article>
+                <article class="technology-card">
+                    <h3>Seguridad de la información</h3>
+                    <p>HTTPS, autenticación de usuarios, control de acceso por roles y cifrado de datos sensibles en tránsito y en reposo según el plan contratado.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
      <!-- Pricing Section -->
 <section class="pricing" id="pricing">
         <div class="container">
@@ -222,14 +365,17 @@
                     <div class="pricing-body">
                         <p class="pricing-description">Gestión básica de cadena de frío</p>
                         <ul class="pricing-features">
-                            <li>✓ Hasta 2 almacenes</li>
-                            <li>✓ 500 lotes activos</li>
-                            <li>✓ 3 usuarios</li>
-                            <li>✓ Dashboard en tiempo real</li>
-                            <li>✓ Alertas por temperatura</li>
+                            <li>Hasta 2 almacenes</li>
+                            <li>500 lotes activos</li>
+                            <li>3 usuarios</li>
+                            <li>Dashboard en tiempo real</li>
+                            <li>Alertas por temperatura</li>
+                            <li>Soporte por correo (48 h hábiles)</li>
+                            <li>Exportación CSV de lecturas</li>
+                            <li>App móvil (consulta)</li>
                         </ul>
                     </div>
-                    <button class="btn btn-outline">Empezar</button>
+                    <a class="btn btn-outline" href="pago.html">Empezar</a>
                 </div>
 
                 <div class="pricing-card featured">
@@ -242,14 +388,17 @@
                     <div class="pricing-body">
                         <p class="pricing-description">Gestión integral con escalabilidad</p>
                         <ul class="pricing-features">
-                            <li>✓ Almacenes ilimitados</li>
-                            <li>✓ Gestión de flota</li>
-                            <li>✓ Integración con APIs</li>
-                            <li>✓ Hasta 20 usuarios</li>
-                            <li>✓ Reportes personalizados</li>
+                            <li>Almacenes ilimitados</li>
+                            <li>Gestión de flota y rutas</li>
+                            <li>Integración con APIs y webhooks</li>
+                            <li>Hasta 20 usuarios con roles</li>
+                            <li>Reportes personalizados y plantillas</li>
+                            <li>SLA de alertas prioritarias</li>
+                            <li>Histórico extendido y comparativas</li>
+                            <li>Soporte en horario extendido</li>
                         </ul>
                     </div>
-                    <button class="btn btn-primary">Comenzar Ahora</button>
+                    <a class="btn btn-primary" href="pago.html">Comenzar ahora</a>
                 </div>
 
                 <div class="pricing-card">
@@ -261,14 +410,17 @@
                     <div class="pricing-body">
                         <p class="pricing-description">Solución completa con dedicación</p>
                         <ul class="pricing-features">
-                            <li>✓ Usuarios ilimitados</li>
-                            <li>✓ Soporte 24/7</li>
-                            <li>✓ Servidores dedicados</li>
-                            <li>✓ Personalización de módulos</li>
-                            <li>✓ Consultoría estratégica</li>
+                            <li>Usuarios ilimitados y SSO opcional</li>
+                            <li>Soporte 24/7 con canal dedicado</li>
+                            <li>Servidores dedicados o nube privada</li>
+                            <li>Personalización de módulos y marca</li>
+                            <li>Consultoría en cadena de frío</li>
+                            <li>Garantías de disponibilidad (SLA)</li>
+                            <li>Integraciones a medida con sensores</li>
+                            <li>Plan de continuidad y respaldo</li>
                         </ul>
                     </div>
-                    <button class="btn btn-outline">Solicitar Cotización</button>
+                    <a class="btn btn-outline" href="pago.html">Solicitar cotización</a>
                 </div>
             </div>
 
@@ -304,7 +456,7 @@
                   </div>
                   <div class="benefits-content">
                       <p class="benefits-eyebrow">Cadena de frío</p>
-                      <h2 class="section-title section-title--left benefits-heading">Ventajas de SafeFlow</h2>
+                      <h2 class="section-title benefits-heading">Ventajas de SafeFlow</h2>
                       <p class="benefits-lead">Monitorización continua, alertas y trazabilidad en un solo lugar.</p>
                       <div class="benefits-list">
                           <div class="benefit-item">
@@ -339,10 +491,85 @@
 
 
 
+
+
+
+     <!-- Team Section -->
+     <section class="team" id="team">
+         <div class="container">
+             <h2 class="section-title">Nuestro Equipo</h2>
+             <p class="team-intro">Somos un equipo de estudiantes de Ingeniería de Software enfocados en desarrollar soluciones tecnológicas para optimizar el monitoreo de temperatura en cadenas de frío. Nuestro objetivo es ayudar a empresas logísticas y de almacenamiento a prevenir pérdidas mediante monitoreo en tiempo real, alertas inteligentes y tecnologías IoT.</p>
+             <div class="team-slider-wrap">
+                 <button type="button" class="team-slider-btn team-slider-prev" id="teamSliderPrev" aria-label="Anterior">‹</button>
+                 <div class="team-slider-viewport" id="teamSlider">
+                     <div class="team-grid">
+                         <div class="team-card">
+                             <div class="team-card-photo">
+                                 <img src="img/guillermo.png" width="400" height="500" alt="Angel Guillermo Berrospi Marín" loading="lazy" decoding="async">
+                             </div>
+                             <div class="team-card-footer">
+                                 <p class="team-role">Ingeniero de Software</p>
+                                 <h3 class="team-name">Angel Guillermo Berrospi Marín</h3>
+                             </div>
+                         </div>
+                         <div class="team-card">
+                             <div class="team-card-photo">
+                                 <img src="img/mel.png" width="400" height="500" alt="Mel Andree Orellana Rodríguez" loading="lazy" decoding="async">
+                             </div>
+                             <div class="team-card-footer">
+                                 <p class="team-role">Ingeniero de Software</p>
+                                 <h3 class="team-name">Mel Andree Orellana Rodríguez</h3>
+                             </div>
+                         </div>
+                         <div class="team-card">
+                             <div class="team-card-photo">
+                                 <img src="img/anhelo.png" width="400" height="500" alt="Anhelo Rodrigo Rocca León" loading="lazy" decoding="async">
+                             </div>
+                             <div class="team-card-footer">
+                                 <p class="team-role">Ingeniero de Software</p>
+                                 <h3 class="team-name">Anhelo Rodrigo Rocca León</h3>
+                             </div>
+                         </div>
+                         <div class="team-card">
+                             <div class="team-card-photo">
+                                 <img src="img/andy.png" width="400" height="500" alt="Andy Alejandro Mio Mejía" loading="lazy" decoding="async">
+                             </div>
+                             <div class="team-card-footer">
+                                 <p class="team-role">Ingeniero de Software</p>
+                                 <h3 class="team-name">Andy Alejandro Mio Mejía</h3>
+                             </div>
+                         </div>
+                         <div class="team-card">
+                             <div class="team-card-photo">
+                                 <img src="img/jefferson.png" width="400" height="500" alt="Jefferson Bayron Morales" loading="lazy" decoding="async">
+                             </div>
+                             <div class="team-card-footer">
+                                 <p class="team-role">Ingeniero de Software</p>
+                                 <h3 class="team-name">Jefferson Bayron Morales</h3>
+                             </div>
+
+                         </div>
+
+                     </div>
+                 </div>
+                 <button type="button" class="team-slider-btn team-slider-next" id="teamSliderNext" aria-label="Siguiente">›</button>
+             </div>
+         </div>
+     </section>
+
+
+
+
+
+
+
+
+
+
    <!-- Industries Section -->
 
 
-     <section class="industries">
+     <section class="industries" id="industries">
         <div class="container">
             <h2 class="section-title">Sectores Beneficiados</h2>
             <div class="industries-layout">
@@ -353,7 +580,7 @@
                 </aside>
                 <div class="industries-content">
                     <div class="industries-grid">
-                        <div class="industry-card">
+                        <div class="industry-card" tabindex="0">
                             <div class="icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M10 5a4 4 0 0 1 5.7 0l3.3 3.3a4 4 0 1 1-5.7 5.7L10 10.7A4 4 0 0 1 10 5z"></path>
@@ -362,8 +589,9 @@
                             </div>
                             <h3>Farmacéutico</h3>
                             <p>Garantiza integridad de medicinas y vacunas</p>
+                            <p class="industry-card__detail">Mantén vacunas y medicamentos termolábiles dentro del rango 2–8 °C con alertas inmediatas, bitácora inalterable y reportes listos para auditorías DIGEMID y BPM.</p>
                         </div>
-                        <div class="industry-card">
+                        <div class="industry-card" tabindex="0">
                             <div class="icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M19 7c-3.5-.5-6.5.8-8.3 2.7C9 11.4 8 13.8 8 17c3.2 0 5.6-1 7.3-2.7C17.2 12.5 18.5 9.5 18 6z"></path>
@@ -373,8 +601,9 @@
                             </div>
                             <h3>Alimentario</h3>
                             <p>Control de productos perecederos</p>
+                            <p class="industry-card__detail">Conserva la frescura de lácteos, carnes y congelados con monitoreo continuo de temperatura y humedad, reduce mermas y respalda tus controles HACCP con evidencia automatizada.</p>
                         </div>
-                        <div class="industry-card">
+                        <div class="industry-card" tabindex="0">
                             <div class="icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M7 3c0 4 4 4 4 8s-4 4-4 8"></path>
@@ -384,8 +613,9 @@
                             </div>
                             <h3>Biológicos</h3>
                             <p>Precisión en cadenas de laboratorio</p>
+                            <p class="industry-card__detail">Trazabilidad de muestras, reactivos y biobancos con rangos estrictos de ultracongelación, alertas tempranas y registro continuo para laboratorios clínicos y de investigación.</p>
                         </div>
-                        <div class="industry-card">
+                        <div class="industry-card" tabindex="0">
                             <div class="icon" aria-hidden="true">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M3 7h11v9H3z"></path>
@@ -396,6 +626,7 @@
                             </div>
                             <h3>Logística</h3>
                             <p>Trazabilidad en distribución</p>
+                            <p class="industry-card__detail">Visibilidad punto a punto en cada despacho: ubicación del vehículo, condiciones del producto en ruta y reportes consolidados para operadores 3PL y BPDT.</p>
                         </div>
                     </div>
                 </div>
@@ -403,68 +634,155 @@
         </div>
     </section>
 
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas frecuentes</h2>
+            <p class="faq__subtitle">Respuestas rápidas antes de agendar una demo.</p>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>¿Cómo funciona el sistema?</summary>
+                    <p class="faq-answer">Instalamos sensores IoT en tus almacenes, cámaras frigoríficas y unidades de transporte. Cada lectura de temperatura y humedad se envía a la nube de SafeFlow, donde el dashboard la muestra en tiempo real, la asocia al lote o despacho correspondiente y la guarda en una bitácora inalterable. Si una medición se sale del rango permitido, el sistema dispara automáticamente alertas a los responsables y registra la acción correctiva tomada para futuras auditorías.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Necesito comprar sensores propios?</summary>
+                    <p class="faq-answer">No es obligatorio. Si ya tienes sensores compatibles, los integramos vía nuestra capa de telemetría (HTTP/MQTT). Si prefieres un esquema “Hardware-as-a-Service”, te entregamos los dispositivos calibrados, su soporte y el reemplazo según tu plan, sin inversión inicial. El equipo te acompaña en el dimensionamiento (cuántos puntos, qué frecuencia y qué umbrales por producto) antes de salir a producción.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Es monitoreo en tiempo real?</summary>
+                    <p class="faq-answer">Sí. Las lecturas llegan al dashboard de forma continua y la frecuencia es configurable por zona y por sensor (por ejemplo, cada minuto en rutas críticas y cada 5 minutos en almacén). Si la red falla, el dispositivo guarda el dato y lo sincroniza al recuperarse, así no se pierde información para los reportes de cumplimiento.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Qué tan seguros están los datos?</summary>
+                    <p class="faq-answer">Toda la comunicación viaja por HTTPS y los datos sensibles se cifran en reposo. La plataforma usa control de acceso basado en roles (administrador, supervisor, operario, calidad) y registra cada acción del usuario en la bitácora. En el plan Enterprise puedes definir políticas adicionales, despliegues dedicados y retención extendida para auditorías regulatorias como DIGEMID o SENASA.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Cómo solicito una demo?</summary>
+                    <p class="faq-answer">Tienes dos caminos: (1) prueba la demo web directamente desde el botón “Ver Demo” del menú principal para explorar el dashboard, alertas y reportes con datos de ejemplo; o (2) completa el formulario de contacto al final de la página indicando tu sector y volumen aproximado, y un miembro del equipo te coordinará una sesión guiada por videollamada. También puedes escribirnos a contacto@safeflow.pe.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
-
-    <!-- Team Section -->
-
-
-  
-
-   <!-- CTA Section -->
-      <section class="cta-section" id="contact">
-          <div class="cta-backdrop">
-              <div class="cta-backdrop__img" aria-hidden="true">
-                  <img src="img/portada2.png" alt="" width="1920" height="600" loading="lazy" decoding="async">
+   <!-- Contact / CTA Section -->
+      <section class="contact-section" id="contact">
+          <div class="contact-hero">
+              <div class="container">
+                  <h2 class="section-title">¿Listo para Optimizar tu Cadena de Frío?</h2>
+                  <p class="contact-hero__subtitle">Únete a empresas que confían en SafeFlow para proteger sus productos y cumplir regulaciones.</p>
               </div>
-              <div class="cta-backdrop__overlay" aria-hidden="true"></div>
-              <div class="container cta-backdrop__content">
-                  <h2>¿Listo para Optimizar tu Cadena de Frío?</h2>
-                  <p>Únete a empresas que confían en SafeFlow para proteger sus productos y cumplir regulaciones.</p>
-                  <div class="cta-buttons">
-                      <a class="btn btn-primary btn-large" href="app.html">Solicitar Demo Gratuita</a>
-                      <a
-                              class="btn btn-secondary btn-large"
-                              href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hablar%20con%20ventas%20de%20SafeFlow."
-                              target="_blank"
-                              rel="noopener noreferrer"
-                      >Hablar con Ventas</a>
+          </div>
+          <div class="contact-split-wrap">
+              <div class="container">
+                  <div class="contact-split-board" id="contact-info">
+                      <div class="contact-split__col contact-split__col--form">
+                      <p class="contact-split__eyebrow contact-split__eyebrow--form">Déjanos tus datos</p>
+                      <p class="contact-split__intro">Usa este formulario para consultas, cotizaciones o para solicitar una demo: lo revisamos y te contactamos por correo.</p>
+                      <form id="contactForm" class="contact-form" novalidate>
+                          <div class="contact-form__grid2">
+                              <label class="contact-form__field">
+                                  <span class="contact-form__label contact-form__label--first">Nombre</span>
+                                  <input type="text" name="nombre" autocomplete="given-name" required>
+                              </label>
+                              <label class="contact-form__field">
+                                  <span class="contact-form__label contact-form__label--last">Apellidos</span>
+                                  <input type="text" name="apellidos" autocomplete="family-name" required>
+                              </label>
+                          </div>
+                          <label class="contact-form__field">
+                              <span class="contact-form__label contact-form__label--email">Correo electrónico</span>
+                              <input type="email" name="email" autocomplete="email" required>
+                          </label>
+                          <label class="contact-form__field">
+                              <span class="contact-form__label contact-form__label--country">País</span>
+                              <select name="pais" id="contactPais">
+                                  <option value="Perú" selected>Perú</option>
+                                  <option value="Chile">Chile</option>
+                                  <option value="Colombia">Colombia</option>
+                                  <option value="México">México</option>
+                                  <option value="Otro">Otro</option>
+                              </select>
+                          </label>
+                          <label class="contact-form__field">
+                              <span class="contact-form__label contact-form__label--region">Departamento o región</span>
+                              <select name="region" id="contactRegion">
+                                  <option value="Lima" selected>Lima</option>
+                                  <option value="Arequipa">Arequipa</option>
+                                  <option value="La Libertad">La Libertad</option>
+                                  <option value="Cusco">Cusco</option>
+                                  <option value="Piura">Piura</option>
+                                  <option value="Otro">Otro / N/A</option>
+                              </select>
+                          </label>
+                          <label class="contact-form__field">
+                              <span class="contact-form__label contact-form__label--message">Mensaje</span>
+                              <textarea name="mensaje" class="contact-form__textarea" rows="4" placeholder="Indica si deseas una demo, número de almacenes, sector, etc."></textarea>
+                          </label>
+                          <button type="submit" class="btn contact-form__submit">Enviar al equipo</button>
+                      </form>
+                      <p id="contactSubmitNotice" class="contact-submit-notice" role="status" aria-live="polite" hidden></p>
                   </div>
+                  <div class="contact-split__col contact-split__col--info">
+                      <p class="contact-split__eyebrow contact-split__eyebrow--info">Contáctanos</p>
+                      <div class="contact-info-block">
+                          <div class="contact-info-row">
+                              <span class="contact-info-row__dt contact-info-row__dt--phone">Teléfono</span>
+                              <p class="contact-info-row__dd"><a href="tel:+5115550100">+51 1 555 0100</a></p>
+                          </div>
+                          <div class="contact-info-row">
+                              <span class="contact-info-row__dt contact-info-row__dt--address">Dirección</span>
+                              <p class="contact-info-row__dd contact-address-text">Av. Javier Prado Este 4200, Santiago de Surco — Lima, Perú</p>
+                          </div>
+                          <div class="contact-info-row">
+                              <span class="contact-info-row__dt contact-info-row__dt--email">Correo</span>
+                              <p class="contact-info-row__dd"><a href="mailto:contacto@safeflow.pe">contacto@safeflow.pe</a></p>
+                          </div>
+                      </div>
+                      <div class="contact-map" aria-label="Mapa">
+                          <iframe
+                              class="contact-map__iframe"
+                              title="Ubicación en Lima, Perú"
+                              loading="lazy"
+                              allowfullscreen
+                              referrerpolicy="no-referrer-when-downgrade"
+                              src="https://maps.google.com/maps?q=-12.084,-77.021&amp;hl=es&amp;z=14&amp;output=embed"></iframe>
+                      </div>
+                  </div>
+              </div>
               </div>
           </div>
       </section>
 
-
+    </main>
 
      <!-- Footer -->
 <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>SafeFlow</h4>
+                    <h4 class="footer-brand">
+                        <img class="footer-brand__logo" src="img/logoP-safelow.png" alt="Logo SafeFlow">
+                        <span class="footer-brand__name">SafeFlow</span>
+                    </h4>
                     <p>Gestión Inteligente de la Cadena de Frío</p>
+                    <p class="footer-social">
+                        <a href="https://github.com/upc-pre-202610-1asi0730-20177-cryologic/safeflow-website" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </p>
                 </div>
                 <div class="footer-section">
                     <h4>Producto</h4>
                     <ul>
-                        <li><a href="#">Características</a></li>
-                        <li><a href="#">Precios</a></li>
-                        <li><a href="#">Seguridad</a></li>
+                        <li><a href="#features">Acerca del Producto</a></li>
+                        <li><a href="#product-demo">Plataforma</a></li>
+                        <li><a href="#pricing">Precios</a></li>
+                        <li><a href="#technology">Seguridad y tecnología</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Empresa</h4>
                     <ul>
-                        <li><a href="#">Acerca de</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Carreras</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#team">Nosotros</a></li>
+                        <li><a href="#faq">Preguntas frecuentes</a></li>
+                        <li><a href="#contact">Contacto</a></li>
                     </ul>
                 </div>
             </div>
