@@ -12,6 +12,17 @@ menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');
 });
 
+// Logo: ir al inicio de la página de forma suave sin cambiar la URL
+const logoLink = document.getElementById('logoLink');
+if (logoLink) {
+    logoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+    });
+}
+
 // Cerrar menú al hacer clic en un link
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
@@ -20,24 +31,27 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
-// ===== Language Switcher =====
-const langButtons = document.querySelectorAll('.lang-btn');
-
-langButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const selectedLang = btn.getAttribute('data-lang');
-        
-        // Actualizar botones activos
-        langButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        // Cambiar idioma en i18n
-        i18n.setLanguage(selectedLang);
-        
-        // Actualizar contenido de la página
-        updatePageContent(selectedLang);
-    });
-});
+function applyDocumentMeta(language) {
+    const lang = language || i18n.getLanguage();
+    const title = i18n.t('meta_title', lang);
+    const desc = i18n.t('meta_description', lang);
+    const keywords = i18n.t('meta_keywords', lang);
+    document.title = title;
+    const md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute('content', desc);
+    const mk = document.querySelector('meta[name="keywords"]');
+    if (mk) mk.setAttribute('content', keywords);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', title);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', desc);
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) ogLocale.setAttribute('content', lang === 'en' ? 'en_US' : 'es_PE');
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute('content', title);
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute('content', desc);
+}
 
 // Función para actualizar el contenido de la página según el idioma
 function updatePageContent(language) {
@@ -51,17 +65,21 @@ function updatePageContent(language) {
     };
 
     // Actualizar texto de navegación
-    setText('[href="#features"]', 'nav_features');
-    setText('[href="#pricing"]', 'nav_pricing');
-    setText('[href="#benefits"]', 'nav_benefits');
+    setText('.nav-menu [href="#product-demo"]', 'nav_product');
+    setText('.nav-menu [href="#features"]', 'nav_features');
+    setText('.nav-menu [href="#how-it-works"]', 'nav_how');
+    setText('.nav-menu [href="#pricing"]', 'nav_pricing');
+    setText('.nav-menu [href="#team"]', 'nav_team');
+    setText('.nav-menu [href="#industries"]', 'nav_industries');
     setText('.nav-menu [href="#contact"]', 'nav_contact');
-    
+    setText('#skipLink', 'skip_to_main');
     // Actualizar hero section
-    setText('.hero-title', 'hero_title');
+    setText('.hero-title__before', 'hero_title_before');
+    setText('.hero-title__accent', 'hero_title_accent');
+    setText('.hero-title__after', 'hero_title_after');
     setText('.hero-subtitle', 'hero_subtitle');
     setText('.temp-label', 'temp_label');
     setText('#demoBtn', 'hero_demo');
-    setText('.hero-buttons .btn-secondary', 'hero_contact');
 
     // Actualizar resultados
     setText('.results .section-title', 'results_title');
@@ -80,16 +98,21 @@ function updatePageContent(language) {
     }
     
     // Actualizar features
-    document.querySelector('.features .section-title').textContent = i18n.t('features_title', language);
+    const featuresSectionTitle = document.querySelector('.features-section-title');
+    if (featuresSectionTitle) featuresSectionTitle.textContent = i18n.t('features_section_title', language);
+    const featuresSubtitle = document.querySelector('.features-subtitle');
+    if (featuresSubtitle) featuresSubtitle.textContent = i18n.t('features_subtitle', language);
     const featuresEyebrow = document.querySelector('.features-eyebrow');
     if (featuresEyebrow) featuresEyebrow.textContent = i18n.t('features_eyebrow', language);
     const featuresLead = document.querySelector('.features-lead');
     if (featuresLead) featuresLead.textContent = i18n.t('features_lead', language);
-    const featuresFootnote = document.querySelector('.features-footnote');
-    if (featuresFootnote) {
-        const main = i18n.t('features_footnote', language);
-        const accent = i18n.t('features_footnote_highlight', language);
-        featuresFootnote.innerHTML = `${main} <span>${accent}</span>`;
+    const featuresVideoHeading = document.querySelector('.features-intro__title');
+    if (featuresVideoHeading) featuresVideoHeading.textContent = i18n.t('features_video_heading', language);
+    const featuresIntroText = document.querySelector('.features-intro__text');
+    if (featuresIntroText) featuresIntroText.textContent = i18n.t('features_intro', language);
+    const featuresVideoIframe = document.querySelector('.features-video__iframe');
+    if (featuresVideoIframe) {
+        featuresVideoIframe.title = i18n.t('features_video_title', language);
     }
     document.querySelectorAll('.feature-card').forEach((card, index) => {
         const featureNum = index + 1;
@@ -104,6 +127,56 @@ function updatePageContent(language) {
         step.querySelector('h3').textContent = i18n.t(`step_${stepNum}`, language);
         step.querySelector('p').textContent = i18n.t(`step_${stepNum}_desc`, language);
     });
+
+    // Plataforma / propuesta de valor
+    const pdTitle = document.querySelector('.product-demo__title');
+    if (pdTitle) pdTitle.textContent = i18n.t('product_demo_title', language);
+    setText('.product-demo__lead', 'product_demo_lead');
+    const valueCards = document.querySelectorAll('.value-card');
+    if (valueCards.length >= 3) {
+        valueCards[0].querySelector('.value-card__label').textContent = i18n.t('value_problem_label', language);
+        valueCards[0].querySelector('.value-card__text').textContent = i18n.t('value_problem_text', language);
+        valueCards[1].querySelector('.value-card__label').textContent = i18n.t('value_audience_label', language);
+        valueCards[1].querySelector('.value-card__text').textContent = i18n.t('value_audience_text', language);
+        valueCards[2].querySelector('.value-card__label').textContent = i18n.t('value_benefit_label', language);
+        valueCards[2].querySelector('.value-card__text').textContent = i18n.t('value_benefit_text', language);
+    }
+    setText('.product-demo__caption', 'product_demo_caption');
+    const pdBtns = document.querySelectorAll('.product-demo__cta-row .btn');
+    if (pdBtns[0]) pdBtns[0].textContent = i18n.t('product_demo_btn_demo', language);
+    if (pdBtns[1]) pdBtns[1].textContent = i18n.t('product_demo_btn_meeting', language);
+
+    // Tecnología
+    const techSection = document.querySelector('.technology .section-title');
+    if (techSection) techSection.textContent = i18n.t('technology_title', language);
+    setText('.technology__intro', 'technology_intro');
+    const techCards = document.querySelectorAll('.technology-card');
+    if (techCards.length >= 3) {
+        techCards[0].querySelector('h3').textContent = i18n.t('technology_card1_title', language);
+        techCards[0].querySelector('p').textContent = i18n.t('technology_card1_text', language);
+        techCards[1].querySelector('h3').textContent = i18n.t('technology_card2_title', language);
+        techCards[1].querySelector('p').textContent = i18n.t('technology_card2_text', language);
+        techCards[2].querySelector('h3').textContent = i18n.t('technology_card3_title', language);
+        techCards[2].querySelector('p').textContent = i18n.t('technology_card3_text', language);
+    }
+
+    // FAQ
+    const faqTitle = document.querySelector('.faq .section-title');
+    if (faqTitle) faqTitle.textContent = i18n.t('faq_title', language);
+    setText('.faq__subtitle', 'faq_subtitle');
+    document.querySelectorAll('.faq-item').forEach((item, index) => {
+        const n = index + 1;
+        const sum = item.querySelector('summary');
+        const ans = item.querySelector('.faq-answer');
+        if (sum) sum.textContent = i18n.t(`faq_q_${n}`, language);
+        if (ans) ans.textContent = i18n.t(`faq_a_${n}`, language);
+    });
+
+    // Ventajas (eyebrow + lead)
+    const benefitsEyebrow = document.querySelector('.benefits-eyebrow');
+    if (benefitsEyebrow) benefitsEyebrow.textContent = i18n.t('benefits_eyebrow', language);
+    const benefitsLead = document.querySelector('.benefits-lead');
+    if (benefitsLead) benefitsLead.textContent = i18n.t('benefits_lead', language);
     
     // Actualizar pricing
     document.querySelector('.pricing .section-title').textContent = i18n.t('pricing_title', language);
@@ -116,12 +189,13 @@ function updatePageContent(language) {
     essentialCard.querySelector('.pricing-price').innerHTML = i18n.t('essential_price', language) + '<span>' + i18n.t('essential_period', language) + '</span>';
     essentialCard.querySelector('.pricing-description').textContent = i18n.t('essential_desc', language);
     const essentialFeatures = essentialCard.querySelectorAll('.pricing-features li');
-    essentialFeatures[0].textContent = i18n.t('essential_feature_1', language);
-    essentialFeatures[1].textContent = i18n.t('essential_feature_2', language);
-    essentialFeatures[2].textContent = i18n.t('essential_feature_3', language);
-    essentialFeatures[3].textContent = i18n.t('essential_feature_4', language);
-    essentialFeatures[4].textContent = i18n.t('essential_feature_5', language);
-    essentialCard.querySelector('.btn-outline').textContent = i18n.t('btn_start', language);
+    essentialFeatures.forEach((li, idx) => {
+        const key = `essential_feature_${idx + 1}`;
+        const t = i18n.t(key, language);
+        if (t !== key) li.textContent = t;
+    });
+    const essentialCta = essentialCard.querySelector('.btn-outline');
+    if (essentialCta) essentialCta.textContent = i18n.t('btn_start', language);
     
     // Professional Plan
     const professionalCard = document.querySelector('.pricing-card:nth-of-type(2)');
@@ -131,12 +205,13 @@ function updatePageContent(language) {
     professionalCard.querySelector('.pricing-price').innerHTML = i18n.t('professional_price', language) + '<span>' + i18n.t('professional_period', language) + '</span>';
     professionalCard.querySelector('.pricing-description').textContent = i18n.t('professional_desc', language);
     const professionalFeatures = professionalCard.querySelectorAll('.pricing-features li');
-    professionalFeatures[0].textContent = i18n.t('professional_feature_1', language);
-    professionalFeatures[1].textContent = i18n.t('professional_feature_2', language);
-    professionalFeatures[2].textContent = i18n.t('professional_feature_3', language);
-    professionalFeatures[3].textContent = i18n.t('professional_feature_4', language);
-    professionalFeatures[4].textContent = i18n.t('professional_feature_5', language);
-    professionalCard.querySelector('.btn-primary').textContent = i18n.t('btn_get_started', language);
+    professionalFeatures.forEach((li, idx) => {
+        const key = `professional_feature_${idx + 1}`;
+        const t = i18n.t(key, language);
+        if (t !== key) li.textContent = t;
+    });
+    const professionalCta = professionalCard.querySelector('.btn-primary');
+    if (professionalCta) professionalCta.textContent = i18n.t('btn_get_started', language);
     
     // Enterprise Plan
     const enterpriseCard = document.querySelector('.pricing-card:nth-of-type(3)');
@@ -145,12 +220,13 @@ function updatePageContent(language) {
     enterpriseCard.querySelector('.pricing-price').textContent = i18n.t('enterprise_price', language);
     enterpriseCard.querySelector('.pricing-description').textContent = i18n.t('enterprise_desc', language);
     const enterpriseFeatures = enterpriseCard.querySelectorAll('.pricing-features li');
-    enterpriseFeatures[0].textContent = i18n.t('enterprise_feature_1', language);
-    enterpriseFeatures[1].textContent = i18n.t('enterprise_feature_2', language);
-    enterpriseFeatures[2].textContent = i18n.t('enterprise_feature_3', language);
-    enterpriseFeatures[3].textContent = i18n.t('enterprise_feature_4', language);
-    enterpriseFeatures[4].textContent = i18n.t('enterprise_feature_5', language);
-    enterpriseCard.querySelector('.btn-outline').textContent = i18n.t('btn_quote', language);
+    enterpriseFeatures.forEach((li, idx) => {
+        const key = `enterprise_feature_${idx + 1}`;
+        const t = i18n.t(key, language);
+        if (t !== key) li.textContent = t;
+    });
+    const enterpriseCta = enterpriseCard.querySelector('.btn-outline');
+    if (enterpriseCta) enterpriseCta.textContent = i18n.t('btn_quote', language);
     
     // Services (si existe la sección)
     const servicesTitle = document.querySelector('.services-title');
@@ -192,7 +268,9 @@ function updatePageContent(language) {
     }
     
     // Actualizar benefits
-    document.querySelector('.benefits .section-title').textContent = i18n.t('benefits_title', language);
+    const benefitsHeading = document.querySelector('.benefits-heading');
+    if (benefitsHeading) benefitsHeading.textContent = i18n.t('benefits_title', language);
+    else document.querySelector('.benefits .section-title').textContent = i18n.t('benefits_title', language);
     document.querySelectorAll('.benefit-item').forEach((item, index) => {
         const benefitNum = index + 1;
         item.querySelector('h3').textContent = i18n.t(`benefit_${benefitNum}`, language);
@@ -204,7 +282,14 @@ function updatePageContent(language) {
     document.querySelectorAll('.industry-card').forEach((card, index) => {
         const industryNum = index + 1;
         card.querySelector('h3').textContent = i18n.t(`industry_${industryNum}`, language);
-        card.querySelector('p').textContent = i18n.t(`industry_${industryNum}_desc`, language);
+        const paragraphs = card.querySelectorAll('p');
+        if (paragraphs[0]) {
+            paragraphs[0].textContent = i18n.t(`industry_${industryNum}_desc`, language);
+        }
+        const detail = card.querySelector('.industry-card__detail');
+        if (detail) {
+            detail.textContent = i18n.t(`industry_${industryNum}_detail`, language);
+        }
     });
     
     // Actualizar team
@@ -224,40 +309,54 @@ function updatePageContent(language) {
         }
     }
     
-    // Actualizar CTA
-    document.querySelector('.cta-section h2').textContent = i18n.t('cta_title', language);
-    document.querySelector('.cta-section p').textContent = i18n.t('cta_subtitle', language);
-    const ctaButtons = document.querySelectorAll('.cta-buttons .btn');
-    ctaButtons[0].textContent = i18n.t('cta_demo', language);
-    ctaButtons[1].textContent = i18n.t('cta_sales', language);
+    // Contacto (dos columnas) + CTA
+    const contactHeroTitle = document.querySelector('.contact-section .contact-hero .section-title');
+    if (contactHeroTitle) contactHeroTitle.textContent = i18n.t('cta_title', language);
+    setText('.contact-hero__subtitle', 'cta_subtitle');
+    setText('.contact-split__eyebrow--form', 'contact_form_heading');
+    setText('.contact-split__intro', 'contact_form_intro');
+    setText('.contact-form__label--first', 'contact_form_first_name');
+    setText('.contact-form__label--last', 'contact_form_last_name');
+    setText('.contact-form__label--email', 'contact_form_email');
+    setText('.contact-form__label--country', 'contact_form_country');
+    setText('.contact-form__label--region', 'contact_form_region');
+    const submitBtn = document.querySelector('.contact-form__submit');
+    if (submitBtn) submitBtn.textContent = i18n.t('contact_form_submit', language);
+    setText('.contact-split__eyebrow--info', 'contact_info_heading');
+    setText('.contact-info-row__dt--phone', 'contact_info_phone_caption');
+    setText('.contact-info-row__dt--address', 'contact_info_address_caption');
+    setText('.contact-info-row__dt--email', 'contact_info_email_caption');
+    setText('.contact-address-text', 'contact_address_full');
+    setText('.contact-form__label--message', 'contact_form_message');
+    const msgTa = document.querySelector('.contact-form__textarea');
+    if (msgTa) msgTa.placeholder = i18n.t('contact_form_message_ph', language);
     
     // Actualizar footer
     const footerSections = document.querySelectorAll('.footer-section');
     
     // Sección 1: SafeFlow
-    footerSections[0].querySelector('h4').textContent = i18n.t('footer_title', language);
+    const footerBrandName = footerSections[0].querySelector('.footer-brand__name');
+    if (footerBrandName) {
+        footerBrandName.textContent = i18n.t('footer_title', language);
+    } else {
+        footerSections[0].querySelector('h4').textContent = i18n.t('footer_title', language);
+    }
     footerSections[0].querySelector('p').textContent = i18n.t('footer_desc', language);
     
     // Sección 2: Producto
     footerSections[1].querySelector('h4').textContent = i18n.t('footer_product', language);
     const productLinks = footerSections[1].querySelectorAll('a');
     productLinks[0].textContent = i18n.t('footer_features', language);
-    productLinks[1].textContent = i18n.t('footer_pricing', language);
-    productLinks[2].textContent = i18n.t('footer_security', language);
+    productLinks[1].textContent = i18n.t('footer_product_demo', language);
+    productLinks[2].textContent = i18n.t('footer_pricing', language);
+    productLinks[3].textContent = i18n.t('footer_security', language);
     
     // Sección 3: Empresa
     footerSections[2].querySelector('h4').textContent = i18n.t('footer_company', language);
     const companyLinks = footerSections[2].querySelectorAll('a');
-    companyLinks[0].textContent = i18n.t('footer_about', language);
-    companyLinks[1].textContent = i18n.t('footer_blog', language);
-    companyLinks[2].textContent = i18n.t('footer_careers', language);
-    
-    // Sección 4: Legal
-    footerSections[3].querySelector('h4').textContent = i18n.t('footer_legal', language);
-    const legalLinks = footerSections[3].querySelectorAll('a');
-    legalLinks[0].textContent = i18n.t('footer_privacy', language);
-    legalLinks[1].textContent = i18n.t('footer_terms', language);
-    legalLinks[2].textContent = i18n.t('footer_contact', language);
+    companyLinks[0].textContent = i18n.t('footer_team', language);
+    companyLinks[1].textContent = i18n.t('footer_faq', language);
+    companyLinks[2].textContent = i18n.t('footer_contact_nav', language);
     
     // Footer copyright
     document.querySelector('.footer-bottom p').textContent = i18n.t('footer_copyright', language);
@@ -302,9 +401,62 @@ function initTeamSlider() {
 // Inicializar idioma al cargar la página
 window.addEventListener('DOMContentLoaded', () => {
     const currentLang = i18n.getLanguage();
-    document.querySelector(`[data-lang="${currentLang}"]`).classList.add('active');
+    document.documentElement.setAttribute('lang', currentLang);
+    applyDocumentMeta(currentLang);
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+        const active = btn.dataset.lang === currentLang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
     updatePageContent(currentLang);
     initTeamSlider();
+
+    document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            if (!lang || !i18n.translations[lang]) return;
+            i18n.setLanguage(lang);
+            document.documentElement.setAttribute('lang', lang);
+            document.querySelectorAll('.lang-btn').forEach((b) => {
+                const on = b.dataset.lang === lang;
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+            applyDocumentMeta(lang);
+            updatePageContent(lang);
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    });
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const lang = i18n.getLanguage();
+            const fd = new FormData(contactForm);
+            const linesForMail = [];
+            fd.forEach((value, key) => {
+                linesForMail.push(`${key}: ${value}`);
+            });
+            const bodyMail = linesForMail.join('\n');
+            const subject = encodeURIComponent('Consulta desde la web — SafeFlow');
+            const mailtoUrl = `mailto:contacto@safeflow.pe?subject=${subject}&body=${encodeURIComponent(bodyMail)}`;
+
+            const notice = document.getElementById('contactSubmitNotice');
+            if (notice) {
+                notice.textContent = i18n.t('contact_form_success', lang);
+                notice.hidden = false;
+                notice.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            contactForm.reset();
+
+            setTimeout(() => {
+                window.location.href = mailtoUrl;
+            }, 0);
+        });
+    }
 });
 
 // ===== Modal Demo =====
@@ -383,7 +535,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observar elementos para animar
-document.querySelectorAll('.feature-card, .benefit-item, .industry-card, .pricing-card, .step').forEach(el => {
+document.querySelectorAll('.feature-card, .benefit-item, .industry-card, .pricing-card, .step, .value-card, .technology-card, .faq-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
