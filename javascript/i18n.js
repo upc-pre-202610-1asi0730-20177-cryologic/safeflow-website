@@ -177,6 +177,8 @@ const i18n = {
             value_benefit_label: 'Beneficio',
             value_benefit_text: 'Menos merma, alertas en minutos, reportes listos para inspección y visibilidad 24/7 desde web y móvil.',
             product_demo_caption: 'Vista del tablero: sensores IoT, umbrales y alertas en tiempo real.',
+            video_product_title: 'Sobre el producto',
+            video_team_title: 'Sobre nosotros',
             product_demo_btn_demo: 'Abrir demo web',
             product_demo_btn_meeting: 'Agendar reunión',
 
@@ -439,6 +441,8 @@ const i18n = {
             value_benefit_label: 'Benefit',
             value_benefit_text: 'Less spoilage, alerts in minutes, inspection-ready reports, and 24/7 visibility on web and mobile.',
             product_demo_caption: 'Dashboard view: IoT sensors, thresholds, and real-time alerts.',
+            video_product_title: 'About the product',
+            video_team_title: 'About us',
             product_demo_btn_demo: 'Open web demo',
             product_demo_btn_meeting: 'Schedule a meeting',
 
