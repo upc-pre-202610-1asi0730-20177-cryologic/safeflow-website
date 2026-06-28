@@ -84,6 +84,6 @@ Para explorar, clonar o modificar este proyecto de manera local, sigue los pasos
 
 ---
 
-## ✒️ Autor
+## Autor
 * **Cryologic** - *Startup de soluciones tecnológicas y de software para el control de cadena de frío.*
 * **Repositorio Organizacional:** [GitHub Cryologic](https://github.com/upc-pre-202610-1asi0730-20177-cryologic)
