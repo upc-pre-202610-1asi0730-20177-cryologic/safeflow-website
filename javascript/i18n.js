@@ -8,7 +8,7 @@ const i18n = {
         es: {
             // ===== Navigation =====
             nav_product: 'Plataforma',
-            nav_features: 'Acerca del Producto',
+            nav_features: 'Características',
             nav_how: '¿Cómo funciona?',
             nav_pricing: 'Planes',
             nav_team: 'Nosotros',
@@ -179,6 +179,8 @@ const i18n = {
             value_benefit_label: 'Beneficio',
             value_benefit_text: 'Menos merma, alertas en minutos, reportes listos para inspección y visibilidad 24/7 desde web y móvil.',
             product_demo_caption: 'Vista del tablero: sensores IoT, umbrales y alertas en tiempo real.',
+            video_product_title: 'Sobre el producto',
+            video_team_title: 'Sobre nosotros',
             product_demo_btn_demo: 'Abrir demo web',
             product_demo_btn_meeting: 'Agendar reunión',
 
@@ -253,7 +255,7 @@ const i18n = {
             footer_title: 'SafeFlow',
             footer_desc: 'Gestión Inteligente de la Cadena de Frío',
             footer_product: 'Producto',
-            footer_features: 'Acerca del Producto',
+            footer_features: 'Características',
             footer_product_demo: 'Plataforma',
             footer_pricing: 'Precios',
             footer_security: 'Seguridad y tecnología',
@@ -272,7 +274,7 @@ const i18n = {
         en: {
             // ===== Navigation =====
             nav_product: 'Platform',
-            nav_features: 'About the Product',
+            nav_features: 'Features',
             nav_how: 'How it works',
             nav_pricing: 'Pricing',
             nav_team: 'About us',
@@ -443,6 +445,8 @@ const i18n = {
             value_benefit_label: 'Benefit',
             value_benefit_text: 'Less spoilage, alerts in minutes, inspection-ready reports, and 24/7 visibility on web and mobile.',
             product_demo_caption: 'Dashboard view: IoT sensors, thresholds, and real-time alerts.',
+            video_product_title: 'About the product',
+            video_team_title: 'About us',
             product_demo_btn_demo: 'Open web demo',
             product_demo_btn_meeting: 'Schedule a meeting',
 
@@ -517,7 +521,7 @@ const i18n = {
             footer_title: 'SafeFlow',
             footer_desc: 'Smart Cold-Chain Management',
             footer_product: 'Product',
-            footer_features: 'About the Product',
+            footer_features: 'Features',
             footer_product_demo: 'Platform',
             footer_pricing: 'Pricing',
             footer_security: 'Security & technology',

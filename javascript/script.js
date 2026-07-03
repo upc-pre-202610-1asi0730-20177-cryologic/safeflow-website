@@ -142,6 +142,8 @@ function updatePageContent(language) {
         valueCards[2].querySelector('.value-card__text').textContent = i18n.t('value_benefit_text', language);
     }
     setText('.product-demo__caption', 'product_demo_caption');
+    setText('.product-demo__figure:not(.team-video) .video-embed__title', 'video_product_title');
+    setText('.team-video .video-embed__title', 'video_team_title');
     const pdBtns = document.querySelectorAll('.product-demo__cta-row .btn');
     if (pdBtns[0]) pdBtns[0].textContent = i18n.t('product_demo_btn_demo', language);
     if (pdBtns[1]) pdBtns[1].textContent = i18n.t('product_demo_btn_meeting', language);
