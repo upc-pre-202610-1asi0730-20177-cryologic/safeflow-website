@@ -98,16 +98,21 @@ function updatePageContent(language) {
     }
     
     // Actualizar features
-    document.querySelector('.features .section-title').textContent = i18n.t('features_title', language);
+    const featuresSectionTitle = document.querySelector('.features-section-title');
+    if (featuresSectionTitle) featuresSectionTitle.textContent = i18n.t('features_section_title', language);
+    const featuresSubtitle = document.querySelector('.features-subtitle');
+    if (featuresSubtitle) featuresSubtitle.textContent = i18n.t('features_subtitle', language);
     const featuresEyebrow = document.querySelector('.features-eyebrow');
     if (featuresEyebrow) featuresEyebrow.textContent = i18n.t('features_eyebrow', language);
     const featuresLead = document.querySelector('.features-lead');
     if (featuresLead) featuresLead.textContent = i18n.t('features_lead', language);
-    const featuresFootnote = document.querySelector('.features-footnote');
-    if (featuresFootnote) {
-        const main = i18n.t('features_footnote', language);
-        const accent = i18n.t('features_footnote_highlight', language);
-        featuresFootnote.innerHTML = `${main} <span>${accent}</span>`;
+    const featuresVideoHeading = document.querySelector('.features-intro__title');
+    if (featuresVideoHeading) featuresVideoHeading.textContent = i18n.t('features_video_heading', language);
+    const featuresIntroText = document.querySelector('.features-intro__text');
+    if (featuresIntroText) featuresIntroText.textContent = i18n.t('features_intro', language);
+    const featuresVideoIframe = document.querySelector('.features-video__iframe');
+    if (featuresVideoIframe) {
+        featuresVideoIframe.title = i18n.t('features_video_title', language);
     }
     document.querySelectorAll('.feature-card').forEach((card, index) => {
         const featureNum = index + 1;

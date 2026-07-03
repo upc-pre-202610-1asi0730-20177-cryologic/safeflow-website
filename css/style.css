@@ -659,8 +659,16 @@ section {
     margin-bottom: 0.8rem;
 }
 
-.features .section-title {
-    margin-bottom: 0.9rem;
+.features .features-section-title {
+    margin-bottom: 0.65rem;
+}
+
+.features-subtitle {
+    font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+    font-weight: 700;
+    color: var(--dark-color);
+    margin: 0 0 0.9rem;
+    line-height: 1.35;
 }
 
 .features-lead {
@@ -721,18 +729,6 @@ section {
     color: var(--text-light);
     line-height: 1.5;
     font-size: 0.94rem;
-}
-
-.features-footnote {
-    margin-top: 1.25rem;
-    text-align: center;
-    font-size: 0.95rem;
-    color: var(--text-light);
-}
-
-.features-footnote span {
-    color: var(--primary-color);
-    font-weight: 600;
 }
 
 

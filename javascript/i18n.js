@@ -41,10 +41,12 @@ const i18n = {
 
             // ===== Features =====
             features_eyebrow: 'FUNCIONALIDADES',
-            features_title: 'Características Principales',
+            features_section_title: 'Acerca del Producto',
+            features_subtitle: 'Características Principales',
             features_lead: 'Nuestra plataforma centraliza, automatiza y protege toda tu operación en un solo lugar.',
-            features_footnote: 'Confiabilidad, seguridad y control en cada etapa.',
-            features_footnote_highlight: 'Tu operación, siempre un paso adelante.',
+            features_video_heading: 'Conoce SafeFlow en acción',
+            features_intro: 'En este video verás cómo nuestra plataforma integra monitoreo en tiempo real, alertas inteligentes y trazabilidad completa para proteger cada etapa de tu cadena de frío.',
+            features_video_title: 'SafeFlow — presentación del producto',
             feature_1: 'Dashboard en Tiempo Real',
             feature_1_desc: 'Visualiza el estado de todos tus almacenes y sensores en una sola pantalla',
             feature_2: 'Alertas Inteligentes',
@@ -305,10 +307,12 @@ const i18n = {
 
             // ===== Features =====
             features_eyebrow: 'CAPABILITIES',
-            features_title: 'Key Features',
+            features_section_title: 'About the Product',
+            features_subtitle: 'Key Features',
             features_lead: 'Our platform centralizes, automates, and protects your entire operation in one place.',
-            features_footnote: 'Reliability, security, and control at every stage.',
-            features_footnote_highlight: 'Your operation, always one step ahead.',
+            features_video_heading: 'See SafeFlow in action',
+            features_intro: 'In this video, see how our platform brings together real-time monitoring, smart alerts, and full traceability to protect every stage of your cold chain.',
+            features_video_title: 'SafeFlow — product overview',
             feature_1: 'Real-Time Dashboard',
             feature_1_desc: 'Monitor the status of all your warehouses and sensors on one screen',
             feature_2: 'Smart Alerts',
